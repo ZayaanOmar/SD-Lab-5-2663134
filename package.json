@@ -1,0 +1,22 @@
+{
+  "name": "sd-lab-5-2663134",
+  "version": "1.0.0",
+  "description": "SD Lab 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZayaanOmar/SD-Lab-5-2663134.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZayaanOmar/SD-Lab-5-2663134/issues"
+  },
+  "homepage": "https://github.com/ZayaanOmar/SD-Lab-5-2663134#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
