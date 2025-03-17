@@ -38,6 +38,8 @@ app.post("/books", (req, res) => {
 
     const newBook = { id, title, details };
     books.push(newBook);
+    
+    res.status(201).json({ message : "Book Added" });
 }); 
 
 app.put("/books/:id", (req, res) => {
@@ -52,6 +54,7 @@ app.put("/books/:id", (req, res) => {
 
     books[bookIndex] = { id, title, details };
 
+    res.status(200).json({ message : "Book Updated" });
 });
 
 app.delete("/books/:id", (req, res) => {
@@ -60,6 +63,8 @@ app.delete("/books/:id", (req, res) => {
     if (bookID == -1) return res.status(404).json({ error : "Book Not Found"});
 
     books.splice(bookID, 1);
+
+    res.status(200).json({ message : "Book Deleted" });
 });
 
 app.post("/books/:id/details", (req, res) => {
@@ -71,15 +76,17 @@ app.post("/books/:id/details", (req, res) => {
 
     books[bookID].details.push(detail);
 
+    res.status(201).json({ message : "Detail Added" });
 });
 
-app.delete("books/:id/details/:detailId", (req, res) => {
+app.delete("/books/:id/details/:detailId", (req, res) => {
     const bookID = books.findIndex(book => book.id === req.params.id);
     const detailId = req.params.detailId;
     if (bookID === -1) return res.status(404).json({ error : "Book Not Found"});
 
     books[bookID].details.splice(detailId, 1);
-
+    
+    res.status(200).json({ message : "Detail Deleted" });
 });
 
 app.listen(PORT, () => {
